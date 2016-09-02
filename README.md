@@ -1,6 +1,9 @@
 ##lua-resty-qrencode module for openresty
-在已安装openresty基础上安装依赖库qrencode，openshit平台上需DIY安装，libpng库已有不安装。
 __
+
+在已安装openresty基础上安装依赖库qrencode，openshit平台上需DIY安装，libpng库已有不安装。
+
+
 wget http://fukuchi.org/works/qrencode/qrencode-3.4.4.tar.gz
 
 tar -xvzf qrencode-3.4.4.tar.gz
@@ -23,7 +26,7 @@ make -f=clib/makefile
 
 make install
 
-How to Use：
+使用方法：
 
 local resty_qr = require "resty.QRcode";
 

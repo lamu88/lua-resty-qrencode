@@ -1,5 +1,4 @@
 ##lua-resty-qrencode module for openresty
-__
 
 在已安装openresty基础上安装依赖库qrencode，openshit平台上需DIY安装，libpng库已有不安装。
 

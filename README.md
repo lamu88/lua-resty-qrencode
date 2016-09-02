@@ -1,11 +1,33 @@
-libqrencode(http://fukuchi.org/works/qrencode/index.html.en) and libpng is need:
-sudo apt-get install libqrencode-dev libpng12-dev
+##lua-resty-qrencode module for openresty
+在已安装openresty基础上安装依赖库qrencode，openshit平台上需DIY安装，libpng库已有不安装。
+__
+wget http://fukuchi.org/works/qrencode/qrencode-3.4.4.tar.gz
 
-How to Use
+tar -xvzf qrencode-3.4.4.tar.gz
+
+cd /tmp/qrencode-3.4.4
+
+./configure prefix=${OPENSHIFT_DATA_DIR}usr/local/libqrencode/
+
+make
+
+make install
+
+cd ..
+
+git clone https://github.com/lamubake/lua-resty-qrencode.git
+
+cd lua-resty-qrencode
+
+make -f=clib/makefile
+
+make install
+
+How to Use：
 
 local resty_qr = require "resty.QRcode";
 
-local str = "http://dcshi.com";
+local str = "http://www.jungule.com";
 
 local file = "/tmp/qr.png";
 

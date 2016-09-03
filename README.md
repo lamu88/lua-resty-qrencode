@@ -31,7 +31,9 @@ local resty_qr = require "resty.QRcode";
 
 local str = "http://www.jungule.com";
 
-local file = "/tmp/qr.png";
+local qr_png = "/qr.png"
+
+local file = ngx.var.document_root..qr_png;
 
 local color = "FF00F3";  --RGB
 

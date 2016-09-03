@@ -1,8 +1,8 @@
 CC      := gcc
 LD      := ld
-CFLAGS  := -fPIC
-LIB		:= -lpng
-LDFLAGS := -shared -fpic
+CFLAGS  := -I${OPENSHIFT_DATA_DIR}usr/local/libqrencode/include -fPIC
+LIB	:= -lpng
+LDFLAGS := -L${OPENSHIFT_DATA_DIR}usr/local/libqrencode/lib -shared -fpic
 SOURCE  := $(wildcard *.c)
 OBJS    := $(patsubst %.c,%.o,$(SOURCE))
 TARGET_LIB := libimg.so
@@ -20,3 +20,7 @@ all:$(OBJS)
 
 clean:
 	rm *.so *.o -rf
+	
+install:
+	cp libimg.so ${OPENSHIFT_DATA_DIR}usr/local/luajit/lib/
+	cp ../lib/resty/*.lua ${OPENSHIFT_DATA_DIR}lualib/resty/

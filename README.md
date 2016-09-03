@@ -19,9 +19,9 @@ cd ..
 
 git clone https://github.com/lamubake/lua-resty-qrencode.git
 
-cd lua-resty-qrencode
+cd lua-resty-qrencode/clib
 
-make -f=clib/makefile
+make
 
 make install
 
